@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Phishing Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>URL Phishing Detection</h1>
+        <p class="description">
+            Masukkan URL yang ingin Anda cek untuk mendeteksi apakah URL tersebut tergolong phishing atau aman.
+            Sistem kami akan memberikan hasil prediksi dengan label dan probabilitas.
+        </p>
+        <form action="/predict" method="POST">
+            <label for="url">Enter URL:</label>
+            <input type="text" id="url" name="url" required>
+            <div class="button-group">
+                <button type="submit" class="btn">Predict</button>
+                <button type="reset" class="btn btn-reset" onclick="resetPrediction()">Reset</button>
+            </div>
+        </form>
+
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+
+        {% if result %}
+        <div class="result {{ label }}">
+            <h2>Prediction Result</h2>
+            <p>URL: <strong>{{ url }}</strong></p>
+            <p>Predicted Label: <strong>{{ label }}</strong></p>
+            <p>Confidence Score: <strong>{{ "%.4f" | format(probability) }}</strong></p>
+        </div>
+        {% endif %}
+    </div>
+
+    <script>
+        // Reset prediction display
+        function resetPrediction() {
+            const resultElement = document.querySelector('.result');
+            if (resultElement) {
+                resultElement.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>
