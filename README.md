@@ -87,13 +87,13 @@ The dataset is sourced from the **Aalto University’s research portal**:
 
 The best configuration is embedding dimension 128, batch size 32, learning rate 3×10−5, and epoch 20.
 
-![Evaluate](https://i.imgur.com/your-image-id.png)
-![Evaluate](https://i.imgur.com/your-image-id.png)
+![Evaluate](https://github.com/alvin0727/TugasAkhir/blob/main/Images/evaluate_model_accuracy.png)
+![Evaluate](https://github.com/alvin0727/TugasAkhir/blob/main/Images/evaluate_model_loss.png)
 
 --- 
 ## Gui
-![Evaluate](https://i.imgur.com/your-image-id.png)
-![Evaluate](https://i.imgur.com/your-image-id.png)
+![Evaluate](https://github.com/alvin0727/TugasAkhir/blob/main/Images/GUI1.png)
+![Evaluate](https://github.com/alvin0727/TugasAkhir/blob/main/Images/GUI2.png)
 
 
 This project is expected to produce an accurate model for identifying phishing URLs based on characteristic patterns in the URL.
